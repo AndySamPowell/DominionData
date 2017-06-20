@@ -30,8 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,16 +50,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base.cs" />
+    <Compile Include="BaseClass.cs" />
+    <Compile Include="Context\Account.cs">
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\AccountHistory.cs">
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\AddressType.cs">
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Customer.cs">
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CustomerAddress.cs">
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\DominionDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DominionDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\DominionDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\DominionDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DominionDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Invoice.cs">
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Product.cs">
+      <DependentUpon>DominionDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Implementations\CustomerList.cs" />
     <Compile Include="Interfaces\ICustomerList.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Uow\IRepository.cs" />
+    <Compile Include="Uow\IUow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Uow\Repository.cs" />
+    <Compile Include="Uow\Uow.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DominionData.Data\DominionData.Data.csproj">
-      <Project>{260a238e-de4b-47f2-893a-8e67718253fb}</Project>
-      <Name>DominionData.Data</Name>
-    </ProjectReference>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Context\DominionDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DominionDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Context\DominionDataModel.edmx.diagram">
+      <DependentUpon>DominionDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Context\DominionDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DominionDataModel.edmx</DependentUpon>
+      <LastGenOutput>DominionDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Context\DominionDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DominionDataModel.edmx</DependentUpon>
+      <LastGenOutput>DominionDataModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

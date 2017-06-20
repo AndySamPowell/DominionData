@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DominionData.Base.Interfaces;
-using DominionData.Base.Implementations;
+
+
 namespace DominionData.AccountsWinApp
 {
 	public partial class Accounts : Form
 	{
-		ICustomerList CustomerList = new DominionData.Base.Implementations.CustomerList();
-
 		public Accounts()
 		{
 			InitializeComponent();
@@ -23,19 +21,21 @@ namespace DominionData.AccountsWinApp
 		private void customerListToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			CustomerList customerList = new CustomerList();
-			customerList.ShowDialog();
-
+			customerList.MdiParent = this;
+			customerList.Show();
 		}
 
 		private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Invoice invoice = new Invoice();
+			invoice.MdiParent = this;
 			invoice.Show();
 		}
 
 		private void creditNoteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			CreditNote creditNote = new CreditNote();
+			creditNote.MdiParent = this;
 			creditNote.Show();
 		}
 

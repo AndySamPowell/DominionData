@@ -8,6 +8,6 @@ namespace DominionData.Base.Interfaces
 {
 	public interface ICustomerList
 	{
-
+		//List<DominionData.Data.Customer> GetAll();
 	}
 }

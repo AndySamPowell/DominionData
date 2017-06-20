@@ -61,7 +61,7 @@
 			// customerListToolStripMenuItem
 			// 
 			this.customerListToolStripMenuItem.Name = "customerListToolStripMenuItem";
-			this.customerListToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+			this.customerListToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
 			this.customerListToolStripMenuItem.Text = "Customer List";
 			this.customerListToolStripMenuItem.Click += new System.EventHandler(this.customerListToolStripMenuItem_Click);
 			// 
@@ -82,9 +82,9 @@
 			this.invoiceToolStripMenuItem.Text = "Invoice";
 			this.invoiceToolStripMenuItem.Click += new System.EventHandler(this.invoiceToolStripMenuItem_Click);
 			// 
-			// creditNotreToolStripMenuItem
+			// creditNoteToolStripMenuItem
 			// 
-			this.creditNoteToolStripMenuItem.Name = "creditNotreToolStripMenuItem";
+			this.creditNoteToolStripMenuItem.Name = "creditNoteToolStripMenuItem";
 			this.creditNoteToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
 			this.creditNoteToolStripMenuItem.Text = "Credit Note";
 			this.creditNoteToolStripMenuItem.Click += new System.EventHandler(this.creditNoteToolStripMenuItem_Click);
@@ -96,7 +96,7 @@
 			this.debtorToolStripMenuItem.Text = "Debtor History";
 			this.debtorToolStripMenuItem.Click += new System.EventHandler(this.debtorToolStripMenuItem_Click);
 			// 
-			// DominionData
+			// Accounts
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,8 +104,9 @@
 			this.Controls.Add(this.menuStrip1);
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip1;
-			this.Name = "DominionData";
+			this.Name = "Accounts";
 			this.Text = "DominionData - Accounts";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
